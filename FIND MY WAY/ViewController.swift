@@ -54,6 +54,20 @@ class ViewController: UIViewController,CLLocationManagerDelegate  {
         locationmanager.delegate = self
         locationmanager.desiredAccuracy = kCLLocationAccuracyBest
 
+        
+         let latitude:CLLocationDegrees = 43.64
+                let longitute:CLLocationDegrees = -79.38
+        
+        let latdelta:CLLocationDegrees = 0.5
+        let londelta:CLLocationDegrees = 0.5
+        
+                let span = MKCoordinateSpan(latitudeDelta: latdelta, longitudeDelta: londelta)
+        
+                let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitute)
+        
+                let region = MKCoordinateRegion(center: location, span: span)
+                mapview.setRegion(region, animated: true)
+                
        // addpolyline()
 //        let pin  = custompin(pintitle: "", pinsubtitle: "", location: CLLocationCoordinate2DMake(43.64, -79.38))
 //        self.mapview.addAnnotation(pin)
@@ -100,9 +114,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate  {
         case 0 :
             destinationcoordinate.transportType = .automobile
 print("automobile")
+            for overlay in mapview.overlays{
+                mapview.removeOverlay(overlay)
+                
+            }
         case 1 :
             destinationcoordinate.transportType = .walking
-            
+            for overlay in mapview.overlays{
+                mapview.removeOverlay(overlay)}
 
 print("walking")
         case 2:
@@ -129,12 +148,12 @@ print("walking")
         }
     }
     
-    @objc func longpress(gesture:UIGestureRecognizer){
-        let zoomout = gesture.location(in: mapview)
-        let coordinate = mapview.convert(zoomout, toCoordinateFrom: mapview)
-        
-    
-    }
+//    @objc func longpress(gesture:UIGestureRecognizer){
+//        let zoomout = gesture.location(in: mapview)
+//        let coordinate = mapview.convert(zoomout, toCoordinateFrom: mapview)
+//
+//
+//    }
     
     
     @IBAction func zoomout(_ sender: Any) {
@@ -164,7 +183,7 @@ print("walking")
 //        mapview.setRegion(region, animated: true)
         
         let coordinatezoomin = mapview.userLocation.coordinate
-        let region = MKCoordinateRegion(center: coordinatezoomin, latitudinalMeters: 9000000*2, longitudinalMeters: 9000000*2)
+        let region = MKCoordinateRegion(center: coordinatezoomin, latitudinalMeters: 800*2, longitudinalMeters: 800*2)
         mapview.setRegion(region, animated: true)
 ////
     }
@@ -272,6 +291,7 @@ extension ViewController:MKMapViewDelegate {
 //        } else if overlay is MKPolyline{
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = UIColor.blue
+//        renderer.strokeColor = UIColor.red
             renderer.lineWidth = 3
             return renderer
             
