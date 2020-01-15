@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,81 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FIND_MY_WAY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRz-BC-nxf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find My Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lK-X7-igW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="izD-0j-2cL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBG-cV-fbg">
+                                <rect key="frame" x="296" y="594" width="79" height="73"/>
+                                <state key="normal" image="locationButton.png"/>
+                                <connections>
+                                    <action selector="findmyway:" destination="BYZ-38-t0r" eventType="touchUpInside" id="px5-um-Pmy"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LLv-wa-0qw">
+                                <rect key="frame" x="45" y="616" width="269" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Automobile"/>
+                                    <segment title="Walking"/>
+                                    <segment title="Transit"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-Ey-nZQ">
+                                <rect key="frame" x="302" y="51" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Zoom out">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="zoomout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFC-cG-tBY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KRz-BC-nxf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7MN-rL-fnV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KRz-BC-nxf" secondAttribute="bottom" id="AM2-FA-pxG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KRz-BC-nxf" secondAttribute="bottom" id="Ekz-bS-1Ym"/>
+                            <constraint firstItem="KRz-BC-nxf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NA4-gi-jNg"/>
+                            <constraint firstItem="9lK-X7-igW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="O4L-AJ-Qqb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FBG-cV-fbg" secondAttribute="bottom" id="R8q-m0-K6B"/>
+                            <constraint firstItem="KRz-BC-nxf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SgL-5F-Ghx"/>
+                            <constraint firstItem="KRz-BC-nxf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WP3-DP-SLD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KRz-BC-nxf" secondAttribute="trailing" id="XR8-cm-1iU"/>
+                            <constraint firstItem="9lK-X7-igW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gB2-G5-gDr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FBG-cV-fbg" secondAttribute="trailing" id="k97-Vi-MVS"/>
+                            <constraint firstItem="9lK-X7-igW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x15-Vd-527"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonfindmyway" destination="FBG-cV-fbg" id="Odl-uW-THC"/>
+                        <outlet property="mapview" destination="KRz-BC-nxf" id="pCS-4H-KJa"/>
+                        <outlet property="segmentcontroller" destination="LLv-wa-0qw" id="RDs-oO-FcA"/>
+                        <outlet property="zoomoutbutton" destination="cz8-Ey-nZQ" id="spn-sk-OhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="locationButton.png" width="67" height="67"/>
+    </resources>
 </document>

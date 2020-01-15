@@ -15,6 +15,8 @@
 		D0AF397B23CE635E003524C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AF397923CE635E003524C5 /* LaunchScreen.storyboard */; };
 		D0AF398623CE635E003524C5 /* FIND_MY_WAYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF398523CE635E003524C5 /* FIND_MY_WAYTests.swift */; };
 		D0AF399123CE635E003524C5 /* FIND_MY_WAYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF399023CE635E003524C5 /* FIND_MY_WAYUITests.swift */; };
+		D0AF399F23CE6431003524C5 /* locationButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AF399E23CE6430003524C5 /* locationButton.png */; };
+		D0AF39A123CE7FEB003524C5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF39A023CE7FEB003524C5 /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D0AF398C23CE635E003524C5 /* FIND MY WAYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FIND MY WAYUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AF399023CE635E003524C5 /* FIND_MY_WAYUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIND_MY_WAYUITests.swift; sourceTree = "<group>"; };
 		D0AF399223CE635E003524C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0AF399E23CE6430003524C5 /* locationButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationButton.png; sourceTree = "<group>"; };
+		D0AF39A023CE7FEB003524C5 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,14 @@
 		D0AF396D23CE635D003524C5 /* FIND MY WAY */ = {
 			isa = PBXGroup;
 			children = (
+				D0AF399E23CE6430003524C5 /* locationButton.png */,
 				D0AF396E23CE635D003524C5 /* AppDelegate.swift */,
 				D0AF397023CE635D003524C5 /* SceneDelegate.swift */,
 				D0AF397223CE635D003524C5 /* ViewController.swift */,
 				D0AF397423CE635D003524C5 /* Main.storyboard */,
 				D0AF397723CE635E003524C5 /* Assets.xcassets */,
 				D0AF397923CE635E003524C5 /* LaunchScreen.storyboard */,
+				D0AF39A023CE7FEB003524C5 /* Place.swift */,
 				D0AF397C23CE635E003524C5 /* Info.plist */,
 			);
 			path = "FIND MY WAY";
@@ -234,6 +240,7 @@
 			files = (
 				D0AF397B23CE635E003524C5 /* LaunchScreen.storyboard in Resources */,
 				D0AF397823CE635E003524C5 /* Assets.xcassets in Resources */,
+				D0AF399F23CE6431003524C5 /* locationButton.png in Resources */,
 				D0AF397623CE635D003524C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +269,7 @@
 				D0AF397323CE635D003524C5 /* ViewController.swift in Sources */,
 				D0AF396F23CE635D003524C5 /* AppDelegate.swift in Sources */,
 				D0AF397123CE635D003524C5 /* SceneDelegate.swift in Sources */,
+				D0AF39A123CE7FEB003524C5 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
